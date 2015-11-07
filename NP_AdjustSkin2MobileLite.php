@@ -365,24 +365,24 @@ function Platform(){
 
 	// au
 	// EZweb 旧端末用
-	}elseif (!ereg("^KDDI","$UA[0]") && $UA[0] == 'UP.Browser') {
+	}elseif (!preg_match('@^KDDI@',"$UA[0]") && $UA[0] == 'UP.Browser') {
 		$phone = array("Platform" => "EZweb","PlatformFlg" => 2);
 
 	// EZweb WAP2.0 対応端末
-	}elseif (ereg("^KDDI","$UA[0]")) {
+	}elseif (preg_match('@^KDDI@',"$UA[0]")) {
 		$phone = array("Platform" => "AU","PlatformFlg" => 2);
 
 	// SoftBank
 	// Vodafone
-	}elseif (ereg("^Vodafone","$UA[0]")){
+	}elseif (preg_match('@^Vodafone@',"$UA[0]")){
 		$phone = array("Platform" => "Vodafone","PlatformFlg" => 3);
 
 	// J-PHONE 
-	}elseif (ereg("^J-PHONE","$UA[0]")) {
+	}elseif (preg_match('@^J-PHONE@',"$UA[0]")) {
 		$phone = array("Platform" => "J-PHONE","PlatformFlg" => 3);
 
 	// SoftBank
-	}elseif (ereg("^SoftBank","$UA[0]")){
+	}elseif (preg_match('@^SoftBank@',"$UA[0]")){
 		$phone = array("Platform" => "SoftBank","PlatformFlg" => 3);
 
 	// 上記以外
